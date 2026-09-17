@@ -8,6 +8,14 @@ abstract final class AppTheme {
     typography: Typography.material2021(),
     textTheme: AppTextTheme.light,
     colorScheme: AppColorScheme.light,
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        padding: const EdgeInsets.all(20),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+    ),
   );
 
   static final dark = ThemeData(
@@ -15,5 +23,13 @@ abstract final class AppTheme {
     typography: Typography.material2021(),
     textTheme: AppTextTheme.dark,
     colorScheme: AppColorScheme.dark,
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        padding: const EdgeInsets.all(20),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+    ),
   );
 }
