@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flyfinder/screens/onboarding/routing/onboarding_routes.dart';
+import 'package:flyfinder/screens/auth/routing/auth_routes.dart';
+// import 'package:flyfinder/screens/onboarding/routing/onboarding_routes.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
@@ -10,6 +11,7 @@ class AppRouter extends RootStackRouter {
 
   @override
   List<AutoRoute> get routes => [
-    ...OnBoardingRoutes.routes,
+    // ...OnBoardingRoutes.routes,
+    ...AuthRoutes.routes,
   ];
 }

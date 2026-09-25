@@ -81,7 +81,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     height: 8,
                     width: currentIndex == index ? 32 : 8,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(99),
+                      shape: BoxShape.circle,
                       color: currentIndex == index
                           ? context.primary
                           : context.outlineVariant,
