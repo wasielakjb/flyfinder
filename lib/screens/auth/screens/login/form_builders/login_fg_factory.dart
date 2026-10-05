@@ -7,7 +7,10 @@ abstract class LoginFormGroupFactory {
   static FormGroup create() {
     return FormGroup({
       _K.login: FormControl<String>(
-        validators: [Validators.required],
+        validators: [
+          Validators.required,
+          Validators.email,
+        ],
       ),
       _K.password: FormControl<String>(
         validators: [Validators.required],

@@ -62,7 +62,7 @@ class LoginRoute extends _i6.PageRouteInfo<void> {
   static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i3.LoginPage();
+      return _i6.WrappedRoute(child: const _i3.LoginPage());
     },
   );
 }
@@ -94,7 +94,7 @@ class RegisterRoute extends _i6.PageRouteInfo<void> {
   static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i5.RegisterPage();
+      return _i6.WrappedRoute(child: const _i5.RegisterPage());
     },
   );
 }

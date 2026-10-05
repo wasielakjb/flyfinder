@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flyfinder/app/theme/app_color_scheme.dart';
 import 'package:flyfinder/app/theme/app_text_theme.dart';
-
 abstract final class AppTheme {
   static final light = ThemeData(
     useMaterial3: true,
@@ -10,22 +9,11 @@ abstract final class AppTheme {
     colorScheme: AppColorScheme.light,
     filledButtonTheme: FilledButtonThemeData(
       style: FilledButton.styleFrom(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
         textStyle: AppTextTheme.light.titleMedium,
-      ),
-    ),
-    outlinedButtonTheme: OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        padding: const EdgeInsets.all(20),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(12),
-          side: BorderSide(color: AppColorScheme.light.outline),
-        ),
-        textStyle: AppTextTheme.light.titleMedium,
-        foregroundColor: AppColorScheme.light.onSurface,
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -34,19 +22,46 @@ abstract final class AppTheme {
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppColorScheme.light.surfaceContainer),
+        borderSide: BorderSide.none,
       ),
+      filled: true,
+      fillColor: AppColorScheme.light.surfaceContainer,
       contentPadding: const EdgeInsets.symmetric(
+        horizontal: 16,
         vertical: 12.5,
-        horizontal: 13,
       ),
       hintStyle: AppTextTheme.light.bodyLarge?.copyWith(
+        fontSize: 16,
         color: AppColorScheme.light.outlineVariant,
       ),
       prefixIconColor: AppColorScheme.light.outlineVariant,
       suffixIconColor: AppColorScheme.light.outlineVariant,
-      filled: true,
-      fillColor: AppColorScheme.light.surfaceContainer,
+    ),
+    searchBarTheme: SearchBarThemeData(
+      padding: const WidgetStatePropertyAll(
+        EdgeInsets.symmetric(horizontal: 12),
+      ),
+      elevation: const WidgetStatePropertyAll(0),
+      hintStyle: WidgetStatePropertyAll(
+        AppTextTheme.light.bodyLarge?.copyWith(
+          color: AppColorScheme.light.outlineVariant,
+        ),
+      ),
+      textStyle: WidgetStatePropertyAll(
+        AppTextTheme.light.bodyLarge?.copyWith(fontSize: 16),
+      ),
+      shape: WidgetStateProperty.resolveWith<OutlinedBorder>(
+        (states) {
+          final focused = states.contains(WidgetState.focused);
+          return RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(
+              color: focused ?  AppColorScheme.light.primary : Colors.transparent,
+              width: focused ? 2 : 1,
+            ),
+          );
+        },
+      ),
     ),
   );
 

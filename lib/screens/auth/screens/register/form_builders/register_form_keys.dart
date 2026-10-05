@@ -1,5 +1,5 @@
 abstract class RegisterKeys {
-  static const login = 'login';
+  static const email = 'email';
   static const password = 'password';
   static const image = 'image';
   static const fullName = 'fullName';
